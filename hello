@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	putchar('H');
+	putchar('\n');
+	putchar('E');
+	putchar('\n');
+	putchar('L');
+	putchar('\n');
+	putchar('L');
+	putchar('\n');
+	putchar('O');
+	putchar('\n');
+	return 0;
+}
