@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+	int result=0;
+	int x;
+	printf("1¼Óµ½1000£º");
+	for(x=1;x<1000;x++)
+	{
+		result=x+result;
+	}
+	printf("%d\n",result);
+	return 0;
+}
