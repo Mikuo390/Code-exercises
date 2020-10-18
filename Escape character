@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	//转移字符：\
+	
+	printf("%c\n", '\'');
+	printf("c:\\test\\32\\test.c");
+	printf("%s\n", "\"");
+	printf("%d\n", strlen("c:\test\32\test.c"));//\32代表2个八进制数字-》3*8^1+2*8^0=26-》	Z
+	printf("%d\n", '\32');
+	printf("%c\n", '\132');
+	printf("%c\n", '\x61');//\x61表示16进制，6*16^1+1*16^0=97-》a
+	return 0;
+}
