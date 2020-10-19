@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	int line = 0;
+	printf("加入软件学院\n");
+
+	while (line < 20000)
+	{
+		printf("敲代码 %d\n",line);
+		line++;
+	}
+	if(line>=20000)
+	printf("年薪30w\n");
+	return 0;
+}
