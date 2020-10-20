@@ -1,0 +1,18 @@
+#include<stdio.h>
+
+int main()
+{
+	int a = 0;
+	printf("欢迎加入软件学院\n");
+
+	while (a < 1000)
+	{
+		printf("敲代码的第%d天\n",a);
+		a++;
+	}
+	if (a>=1000)
+	{
+		printf("年薪30w\n");
+		return 0;
+	}
+}
