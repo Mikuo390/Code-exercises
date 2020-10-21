@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+int main()
+{
+	int day = 0;
+	scanf("%d", &day);
+	if (1 == day)
+		printf("星期一\n");
+	else if (2 == day)
+		printf("星期二\n");
+	else if (3 == day)
+		printf("星期三\n");
+	else if (4 == day)
+		printf("星期四\n");
+	else if (5 == day)
+		printf("星期五\n");
+	else if (6 == day)
+		printf("星期六\n");
+	else if (7 == day)
+		printf("星期日\n");
+}
