@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+struct BOOK
+{
+	char name[20];
+	short price;
+};
+
+int main()
+{
+	struct BOOK NT = { "KF简史" ,1};
+	struct BOOK* pNT = &NT;
+
+	printf("%s\n", pNT->name);
+	printf("%d\n", pNT->price);
+	//printf("%s\n", (*NT).name);
+	//printf("%d\n", (*NT).price);
+
+	printf("书名；%s\n", NT.name);
+	printf("价格；%d元\n", NT.price);
+	NT.price = 1;
+	printf("因为KF过于NT导致销量，不佳于是价格跌至：%d分钱\n", NT.price);
+	return 0;
+}
