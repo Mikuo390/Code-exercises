@@ -1,0 +1,10 @@
+#include<stdio.h>
+
+int main()
+{
+	if (1)
+	//while(1)死循环
+		printf("hehe\n");
+
+	return 0;
+}
