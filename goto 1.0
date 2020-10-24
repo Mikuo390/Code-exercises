@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{
+	printf("hello bit\n");
+	goto again;
+	printf("你好\n");//跳过语句
+again:
+	printf("hehe\n");
+	return 0;
+}
