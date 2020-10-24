@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int i;
+	int count = 0;
+	//sqrt-开平方的数学哭函数
+	for (i = 2; i <= 200; i++)
+	{
+		int j = 0;
+		for (j = 2; j <	sqrt(i); j++)
+		{
+			if (i % j == 0)
+			{
+				break;
+			}
+		}
+		if (j>sqrt(i))
+		{
+			count++;
+			printf("%d\n", i);
+		}
+	}
+	printf("\ncount=%d\n", count);
+	return 0;
+}
