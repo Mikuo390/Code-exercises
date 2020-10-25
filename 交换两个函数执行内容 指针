@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main()
+{
+	int a = 10;
+	int* pa = &a;//pa指针变量
+	*pa = 20;//解引用操作
+	printf("%d\n", a);
+	return 0;
+}
