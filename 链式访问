@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int len = 0;
+	len = strlen("abc");
+	printf("%d\n", len);
+	printf("%d\n", strlen("abc"));
+	return 0;
+	
+}
+
+//#include<stdio.h>
+//int main()
+//{
+//	//printf的返回值是打印屏幕上字符个数
+//	printf("%d", printf("%d", printf("%d", 43)));
+//	
+//	return 0;
+//}
