@@ -1,0 +1,27 @@
+#include<stdio.h>
+//void Swap1(int x, int y)//void无返回值
+//{
+//	int tmp = 0;
+//	tmp = x;
+//	x = y;
+//	y = tmp;
+//}不能完成任务
+void Swap2(int* pa, int* pb)
+{
+	int tmp = 0;
+	tmp=*pa;
+	*pa = *pb;
+	*pb=tmp;
+}
+int main()
+{
+	int a, b;
+	printf("a和b的值：");
+	scanf("%d%d", &a, &b);
+
+	printf("交换前a=%d,b=%d\n", a, b);
+	Swap2(&a, &b);
+
+	printf("交换后a=%d,b=%d\n", a, b);
+	return 0;
+}
