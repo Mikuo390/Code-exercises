@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char arr1[] = "bit";
+	char arr2[20] = "###########";
+	strcpy(arr2,arr1);//把arr1的内容拷贝到arr2里
+	printf("%s\n", arr2);
+	//strlen -string length-字符串长度有关
+	//strcpy -string copy-字符串拷贝
+	return 0;
+}
