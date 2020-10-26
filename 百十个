@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main()
+{
+	int a, b, c, n;
+	printf("输入一个三位数\n");
+	scanf("%d", &n);
+	a = n / 100;
+	b = n % 100 / 10;
+	c = n % 10;
+	printf("百位数%d，十位数%d，个位数%d\n", a, b, c);
+	return 0;
+}
