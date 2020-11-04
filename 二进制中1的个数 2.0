@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int count_bit_one(unsigned int n)
+{
+	int count = 0;
+	while (n)
+	{
+		if (n % 2 == 1)
+		{
+			count++;
+		}
+		n = n / 2;
+	}
+	return count;
+}
+
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+	//a的二进制表示中有几个1
+	int count = count_bit_one(a);
+	//-1
+	//10000000000000000000000000000001-原码
+	//11111111111111111111111111111110-反码
+	//11111111111111111111111111111111-补码-内存中存放的
+	//13
+	//00000000000000000000000000001101
+	//
+	printf("count =%d\n", count);
+	return 0;
+}
