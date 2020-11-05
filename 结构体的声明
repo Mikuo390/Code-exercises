@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+//描述一个学生-
+//struct结构体关键字,Stu-结构体标签 struct stu-结构体类型
+//
+//struct Stu
+//{
+//	//成员变量
+//	char name[20];
+//	short age;
+//	char tele[12];
+//	char sex[5];
+//}s1,s2,s3;//三个全局的结构体变量
+
+//typedef struct Stu
+//{
+//	//成员变量
+//	char name[20];
+//	short age;
+//	char tele[12];
+//	char sex[5];
+//}Stu;//Stu是类型
+//
+//int main()
+//{
+//	struct Stu s1;//局部结构体变量
+//	Stu s2;
+//
+//	return 0;
+//}
