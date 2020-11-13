@@ -1,0 +1,109 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#include<math.h>
+
+void menu()//主菜单
+{
+	printf("***********************************\n");
+	printf("*****   三角形面积周长计算    *****\n");
+	printf("***********************************\n");
+	printf("*****   1 . start   0 . exit  *****\n");
+	printf("***********************************\n");
+}
+
+void code();//引用主函数
+
+void text()//主界面操控
+{
+	int input1;
+	do
+	{
+		menu();
+		printf("请选择:>");
+		scanf("%d", &input1);
+
+		switch (input1)
+		{
+		case 1:
+			code();
+			break;
+		case 0:
+			printf("退出程序\n");
+			break;
+		default:
+			printf("选择错误，请重新选择！\n");
+			break;
+		}
+	} while (input1);
+}
+
+double C(double x, double y, double z)//周长运算
+{
+	double c;
+	c = x + y + z;
+	return c;
+}
+double S(double x, double y, double z, double w)//面积运算
+{
+	double q;
+	q = 0.5 * w;
+	z = sqrt(q * (q - x) * (q - y) * (q - z));
+	return z;
+}
+
+void code()//主代码
+{
+	double a, b, c, m, s;
+	printf("请输入三角形三条边的值:>");
+	scanf("%lf%lf%lf", &a, &b, &c);
+
+	double Min, Max, i;
+	Min = (a < b ? a : b);
+	Min = (Min < c ? Min : c);//判断最短边
+	Max = (a > b ? a : b);
+	Max = (Max > c ? Max : c);//判断最长边
+	i = a + b + c - Max - Min;
+	if ((i + Min > Max) && (Max - i < Min))//判断三角形是否合法
+	{
+		m = C(a, b, c);
+		s = S(a, b, c, m);
+		printf("三角形的周长为%.2lf\n面积为%.2lf\n", m, s);
+	}
+	else
+	{
+		printf("您输入的三条边无法构成三角形\n----请输入----\n《2》-重新输入\n《3》-返回主菜单\n");
+		int input;
+		//do
+		//{
+			printf("请选择:>");
+			scanf("%d", &input);
+			switch (input)
+			{
+			//case 1:
+			//	code();
+			//	break;
+			case 2:
+				code();
+				break;
+			case 3:
+				menu();
+				break;
+			//case 0:
+			//	printf("退出程序\n");
+			//	break;
+			default:
+				printf("选择错误，请重新选择！\n");
+				break;
+			}
+		//} 
+		//while (input);
+	}
+}
+
+int main()
+{
+	text();
+	return 0;	
+}
+
