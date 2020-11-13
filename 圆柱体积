@@ -1,0 +1,45 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#define PAI 3.14
+double C(double x)
+{
+	double z = 0;
+	z = 2 * PAI * x;
+	return z;
+}
+double S(double x)
+{
+	double z = 0;
+	z = PAI * x * x;
+	return z;
+}
+double Sb(double x, double y, double z)
+{
+	double s = 0;
+	s = 2 * x + y * z;
+	return s;
+}
+double V(double x, double y)
+{
+	double z = 0;
+	z = x * y;
+	return z;
+}
+int main()
+{
+	double r, h, c, s, v, sb;
+	printf("请输入圆柱的半径和高:>");
+	scanf("%lf%lf", &r, &h);
+
+	c = C(r);
+	s = S(r);
+	sb = Sb(s, c, h);
+	v = V(s, h);
+	printf("圆的边长为:>%6.3lf\n", c);
+	printf("圆的面积为:>%6.3lf\n", s);
+	printf("圆柱的表面积为:>%6.3lf\n", sb);
+	printf("圆柱的体积为:>%6.3lf\n", v);
+
+	return 0;
+}
