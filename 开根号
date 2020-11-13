@@ -1,0 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+	double a;
+	printf("请输入一个大于0的数:>");
+	scanf("%lf", &a);
+	if (a>=0)
+	{
+		printf("%f\n", sqrt(a));
+	}
+	else
+	{
+		printf("输入错误，请重新输入！！！");
+	}
+	return 0;
+}
