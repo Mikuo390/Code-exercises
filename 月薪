@@ -1,0 +1,41 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+float RATE(float s)
+{
+	float rate;
+	if (s <= 850)
+	{
+		rate = 0;
+		return rate;
+	}
+	else if(850 < s <= 1350)
+	{
+		rate = 0.05;
+		return rate;
+	}
+	else if (1350 < s <= 2850)
+	{
+		rate = 0.1;
+		return rate;
+	}
+	else if (2850 < s <= 5850)
+	{
+		rate = 0.15;
+		return rate;
+	}
+	else
+	{
+		rate = 0.2;
+		return rate;
+	}
+}
+int main()
+{
+	float rate, salary, tax;
+	scanf("%f", &salary);
+	rate = RATE(salary);
+	tax = rate * (salary - 850);
+	printf("tax=%0.2f\n", tax);
+	return 0;
+}
