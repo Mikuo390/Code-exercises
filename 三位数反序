@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+	char a, b, c;
+	printf("请输入三个数\n");
+	
+	a = getchar();
+	b = getchar();
+	c = getchar();
+
+	printf("三个数的反序\n");
+	putchar(c);
+	putchar(b);
+	putchar(a);
+	return 0;
+}
