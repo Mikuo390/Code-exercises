@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+	int input = 0;
+	do
+	{
+		menu();
+		printf("请选择:>");
+		scanf("%d", &input);
+
+		switch (input)
+		{
+		case 1:
+			Calc(Add);		
+			break;
+		case 2:
+			Calc(Sub);
+			break;
+		case 3:
+			Calc(Mul);
+			break;
+		case 4:
+			Calc(Div);
+			break;
+		case 0:
+			printf("退出\n");
+			break;
+		default:
+			printf("选择错误！！！");
+			break;
+		}
+	} while (input);
+}
