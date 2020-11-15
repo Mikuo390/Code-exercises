@@ -1,0 +1,80 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+float s1(float salary)
+{
+	return 0;
+}
+float s2(float salary)
+{
+	return 0.05 * (salary - 850);
+}
+float s3(float salary)
+{
+	return 0.1 * (salary - 850);
+}
+float s4(float salary)
+{
+	return 0.15 * (salary - 850);
+}
+float s5(float salary)
+{
+	return 0.2 * (salary - 850);
+}
+void menu()
+{
+	printf("***********************************\n");
+	printf("*****      1.salary<=850      *****\n");
+	printf("*****    2.850<salary<=1350   *****\n");
+	printf("*****    3.1350<salary<=2850  *****\n");
+	printf("*****    4.2850<salary<=5850  *****\n");
+	printf("*****     5.salary<=5850      *****\n");
+	printf("*****         0. exit         *****\n");
+	printf("***********************************\n");
+}
+int main()
+{
+	float salary;
+	int input;
+	do
+	{
+		menu();
+		printf("请选择:>");
+		scanf("%d", &input);
+
+		switch (input)
+		{
+		case 1:
+			printf("请输入工资:>");
+			scanf("%f", &salary);
+			printf("%f\n", s1(salary));
+			break;
+		case 2:
+			printf("请输入工资:>");
+			scanf("%f", &salary);
+			printf("%f\n", s2(salary));
+			break;
+		case 3:
+			printf("请输入工资:>");
+			scanf("%f", &salary);
+			printf("%f\n", s3(salary));
+			break;
+		case 4:
+			printf("请输入工资:>");
+			scanf("%f", &salary);
+			printf("%f\n", s4(salary));
+			break;
+		case 5:
+			printf("请输入工资:>");
+			scanf("%f", &salary);
+			printf("%f\n", s5(salary));
+			break;
+		case 0:
+			break;
+		default:
+			printf("选择错误！！！");
+			break;
+		}
+	} 
+	while (input);
+}
