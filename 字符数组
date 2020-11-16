@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	//字符数组
+	char arr[] = { 'a','b','c','d','e','f' };
+
+	printf("%d\n", strlen(arr));//随机值
+	printf("%d\n", strlen(arr+0));//随机值
+	//printf("%d\n", strlen(*arr));//报错
+	//printf("%d\n", strlen(arr[1]));//报错
+	printf("%d\n", strlen(&arr));//随机
+	printf("%d\n", strlen(&arr+1));//随机
+	printf("%d\n", strlen(&arr[0]+1));//随机
+
+	printf("%d\n", sizeof(arr));//sizeof计算的是数组大小-6*1=6
+	printf("%d\n", sizeof(arr + 0));//4/8 arr是首元素的地址，arr+0还是元素的地址 地址的大小是4/8字节
+	printf("%d\n", sizeof(*arr));//1 arr是首元素地址，*arr就是首元素,首元素是字符大小是一个字节
+	printf("%d\n", sizeof(arr[1]));//1
+	printf("%d\n", sizeof(&arr));//4/8 &arr是数组的地址，但还是地址，地址4/8
+	printf("%d\n", sizeof(&arr + 1));//&arr+1 是跳高高整个数组后开始的地址-地址大小是4/8个字节
+	printf("%d\n", sizeof(&arr[0] + 1));//4/8 第二个元素的地址
+}
