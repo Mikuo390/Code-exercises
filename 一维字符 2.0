@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char arr[] = "abcdef";
+	printf("%d\n", strlen(arr));//6
+	printf("%d\n", strlen(arr + 0));//6
+//	printf("%d\n", strlen(*arr));//报错
+//	printf("%d\n", strlen(arr[1]));//报错
+	printf("%d\n", strlen(&arr));//6 &arr-数组的地址-指针数组char(*p)[7]=&arr;
+	printf("%d\n", strlen(&arr + 1));//s随机
+	printf("%d\n", strlen(&arr[0] + 1));//5
+	
+	printf("%d\n", sizeof(arr));//7 sizeof(arr)计算的数组的大小
+	printf("%d\n", sizeof(arr + 0));//4/8 计算的是地址的大小 arr+0是首元素地址
+	printf("%d\n", sizeof(*arr));//1 *arr是首元素 sizeof（*arr）计算首元素的大小
+	printf("%d\n", sizeof(arr[1]));//1 arr[1]是第二个元素
+	printf("%d\n", sizeof(&arr));//4/8 &arr是数组的地址
+	printf("%d\n", sizeof(&arr + 1));//4/8
+	printf("%d\n", sizeof(&arr[0] + 1));//4/8
+}
