@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()
+{
+	int a[3][4] = { 0 };
+	printf("%p\n", a[0][0]);
+	printf("%p\n", a[0] + 1);
+	printf("%p\n", a + 1);
+	printf("%p\n", &a[0] + 1);
+
+
+	printf("%d\n", sizeof(a));//48
+	printf("%d\n", sizeof(a[0][0]));//4
+	printf("%d\n", sizeof(a[0]));//16 a[0]相当于第一行作为一维数组的数组名，计算单是第一行的大小
+	printf("%d\n", sizeof(a[0] + 1));//4/8 第一行第二元素的地址
+	printf("%d\n", sizeof(*(a[0] + 1)));//4/8
+	printf("%d\n", sizeof(a + 1));//4 //奥赛二维数组的数组名，没有sizeof(数组名),也没有&数组名，所以a是首元素地址，
+	//二维数组看成一位数组时，二维数组的首元素是他的第一行，a就是第一行的地址
+	printf("%d\n", sizeof(*(a + 1)));//16
+	printf("%d\n", sizeof(&a[0] + 1));//4 第二行的地址
+	printf("%d\n", sizeof(*(&a[0] + 1)));//16
+	printf("%d\n", sizeof(*a));//16 a是首元素地址，*a就是第一行的地址
+	printf("%d\n", sizeof(a[3]));//16 sizeof不实际访问（）内
+}
