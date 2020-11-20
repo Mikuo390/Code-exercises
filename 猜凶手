@@ -1,0 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+//A：不是我 //1
+//B：是c    //1
+//C：是D    //0
+//D:c在胡说 //1
+//1假3真
+int main()
+{
+	int killer = 0;
+	for (killer = 'a'; killer <= 'd'; killer++)
+	{
+		if ((killer != 'a') + (killer == 'c') + (killer == 'd') + (killer != 'd') == 3)
+		{
+			printf("killer = %c\n",killer);
+		}
+	}
+	return 0;
+}
