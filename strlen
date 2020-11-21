@@ -1,0 +1,41 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+int my_strlen(const char* str)
+{
+	int count = 0;
+	assert(*str != NULL);
+	while (*str !='\0')
+	{
+		count++;
+		str++;
+	}
+	return count;
+}
+int main()
+{
+	//int len = strlen("abcdef");
+	//char arr[] = { 'a,','b','c','d','e','f' };
+
+	int len =my_strlen("abcdef");
+	printf("%d\n", len);
+	return 0;
+}
+
+#include<stdio.h>
+#include<string.h>
+//size_t = unsigned
+int main()
+{
+	if (strlen("abc") - strlen("abcdef") > 0)
+	{
+		printf("hehe\n");
+	}
+	else
+	{
+		printf("haha\a");
+	}
+	return 0;
+}
