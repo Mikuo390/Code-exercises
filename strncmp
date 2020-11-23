@@ -1,0 +1,11 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	//strcncmp - 字符串比较
+	const char* p1 = "abcded";
+	char* p2 = "abcqwer";
+	int ret = strncmp(p1, p2, 4);
+	printf("%d\n", ret);
+	return 0;
+}
