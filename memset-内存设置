@@ -1,0 +1,10 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<memory.h>
+int main()
+{
+	char arr[10] = "";
+	memset(arr, '#', 10);//10字节
+
+	return 0;
+}
