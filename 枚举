@@ -1,0 +1,35 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+//枚举类型
+enum Sex
+{
+	//枚举的可能取值-常量
+	MALE = 2,
+	FEMALE = 4,
+	SECRET = 8
+};
+enum Color
+{
+	RED,//0
+	GREEN,//1
+	BLUE//2
+};
+#define RED 0
+#define GREEN 1
+#define BLUE 2
+int main()
+{
+	//enum Sex s = MALE;
+	//enum Color c = BULE;
+
+	int color = RED;
+	
+	printf("%d %d %d\n", RED, GREEN, BLUE);
+	printf("%d %d %d\n", MALE, FEMALE, SECRET);
+	
+	enum Sex s = MALE;
+	printf("%d\n", sizeof(s));
+	
+	return 0;
+}
