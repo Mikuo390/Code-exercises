@@ -1,0 +1,33 @@
+#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//联合-联合体-共用体
+//union Un
+//{
+//	char c;
+//	int i;
+//};
+//int main()
+//{
+//	union Un u;
+//	printf("%d\n", sizeof(u));
+//
+//	printf("%p\n", &u);
+//
+//	printf("%p\n", &(u.c));
+//	printf("%p\n", &(u.i));
+//	return 0;
+//}
+
+#include<stdio.h>
+union Un
+{
+	int a;//4 8 4
+	char arr[5];//5 1 8 1
+};
+int main()
+{
+	union Un u;
+	printf("%d\n", sizeof(u));
+
+	return 0;
+}
