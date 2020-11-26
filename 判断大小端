@@ -1,0 +1,45 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+//int a = 0x11223344;
+//底地址----------------->高地址
+//.....[][][11][22][33][44][][][][].....大端字节序存储模式
+//.....[][][44][33][22][11][][][][].....小端字节序存储模式
+//讨论内存中一个数据，存放在内存中存放的字节顺序
+//大小端字节序问题
+//
+//int check_sys()
+//{
+//	int a = 1;
+//	//返回1表示小端
+//	//返回0表示大端
+//	return *(char*)&a;
+//}
+int check_sys()
+{
+	union Un
+	{
+		char c;
+		int i;
+	}u;
+	u.i = 1;//
+	//返回1表示小端
+	//返回0表示大端
+	return u.c;
+}
+int main()
+{
+	int a = 1;
+	int ret = check_sys();
+
+	if (1 == ret)
+	{
+		printf("小端\n");
+	}
+	else
+	{
+		printf("大端\n");
+	}
+
+
+	return 0;
+}
