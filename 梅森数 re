@@ -1,0 +1,35 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#include<math.h>
+int su(int p)
+{
+    return pow(2, p) - 1;
+}
+int main()
+{
+    unsigned int ri, repeat, m, n, mp;
+    int i, k, t;
+    printf("请输入运算次数（0<r<10）:>");
+    scanf("%d", &repeat);
+    for (ri = 1; ri <= repeat; ri++) 
+    {
+        scanf("%d%d", &m, &n);
+        mp = 0;
+        for (mp = m; mp <= n; mp++)
+        {
+            t = su(mp);
+            for (k = 2; k < t; k++)
+            {
+                if (t % k == 0)
+                    break;
+            }
+            if (k == t)
+            {
+                printf("%d ", t);
+            }
+        }
+
+    }
+    return 0;
+}
