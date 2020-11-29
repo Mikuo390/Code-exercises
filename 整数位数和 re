@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+int main()
+{
+    int ri, repeat;//循环次数
+    int number, sum;//位数 各位数之和
+    long in;
+
+    printf("请输入运算次数（0<r<10）:>");
+    scanf("%d", &repeat);
+    for (ri = 1; ri <= repeat; ri++) 
+    {
+        printf("请输入一个整数（-10000000<r<1000000）:>");
+        scanf("%ld", &in);
+
+        sum = 0;
+        number = 0;
+        while (in!=0)
+        {
+            sum = sum + in % 10;
+            in /= 10;
+            number++;
+        }
+        sum = sum < 0 ? -sum : sum;
+        printf("number=%d, sum=%d\n", number, sum);
+    }
+    return 0;
+}
