@@ -1,0 +1,38 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    int ri, repeat;
+    int flag, i, m, n;
+    printf("请输入运算次数（0<r<10）:>");
+    scanf("%d", &repeat);
+    for (ri = 1; ri <= repeat; ri++) 
+    {
+        scanf("%d", &m);
+        flag = 1;//初始化
+        //flag 1为真0为假
+        if (m == 1)
+            flag = 0;
+        else if (m == 2)
+            flag = 1;
+        else//m的值大于2的情况
+        {
+            // m/2减少循环次数，防止除以自身
+            for (i = 2; i <= m/2; i++)
+            {
+                if (m % i == 0)
+                {
+                    flag = 0;
+                    break;
+                }
+            }
+        }
+        if (flag) 
+            printf("YES\n");
+        else 	
+            printf("NO\n");
+    }
+    return 0;
+}
