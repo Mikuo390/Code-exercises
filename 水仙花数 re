@@ -1,0 +1,36 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+int main()
+{
+    int ri, repeat;
+    int i, digit, m, n, number, sum;
+	//循环 数字    范围   
+    printf("请输入运算次数（0<r<10）:>");
+    scanf("%d", &repeat);
+    for (ri = 1; ri <= repeat; ri++) 
+	{
+        scanf("%d%d", &m, &n);//范围
+
+		for (i = m; i <= n; i++)
+		{
+			int sum = 0;
+			int digit = i;
+
+			//计算i的每一位的n次方之和
+			digit = i;
+			while (digit != 0)
+			{
+				sum = sum + (digit % 10)* (digit % 10)* (digit % 10);
+				digit = digit / 10;//退位
+			}
+			//比较i == sum
+			if (i == sum)
+			{
+				printf("%d ", i);
+			}
+		}
+
+    }
+    return 0;
+}
