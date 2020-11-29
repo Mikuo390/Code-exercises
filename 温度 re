@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+int main()
+{
+    int ri, repeat;
+    int begin, c, end, f;
+    
+    printf("请输入运算次数（0<r<10）:>");
+    scanf("%d", &repeat);
+    
+    for (ri = 1; ri <= repeat; ri++) 
+    {
+        scanf("%d%d", &begin, &end);//起止值
+        
+        printf("Celsius  Fahrenheit\n");
+        for (c = begin; c <= end; c++)
+        {
+            f = 32 + c * 9 / 5;
+            printf("%d%10d\n", c, f);
+        }
+    }
+}
