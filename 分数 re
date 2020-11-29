@@ -1,0 +1,60 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int ri, repeat;//循环次数
+    int temp, flag;
+    double eps, item, sum;//条件 算式每项数值  和
+
+    printf("请输入运算次数（0<r<10）:>");
+    scanf("%d", &repeat);
+
+    for (ri = 1; ri <= repeat; ri++)//次数循环
+    {
+        printf("请输入eps的值:>");
+        scanf("%le", &eps);//最后一项的绝对值小于eps，%le科学计数法输出
+
+        flag = 1;
+        sum = 0;
+        //初始化变量
+
+        for (item = 1; fabs(1.0 / item) >= eps; item += 2.0)//计算循环
+        {
+            sum = sum + flag * (1.0 / item);//和运算
+            flag = -flag;//符号变化
+        }
+        printf("%.6f\n", sum);
+    }
+    return 0;
+}
+
+
+#include <stdio.h>
+#include <math.h> 
+int main()
+{
+
+	double eps, temp, sum = 0;
+	double fz = 1.0, fm = 1.0;//分子分母
+	int repeat = 0, i =0;//次数限制 计算次数
+	printf("请输入运算次数（0<r<10）:>");
+	scanf("%d", &repeat);
+	printf("请输入eps的值:>");
+	scanf("%lf", &eps);
+	
+	temp = fz / fm;
+	
+	while (fabs(temp) >= eps || repeat > i)
+	{
+		fz = -fz;
+		fm += 2;
+		sum += temp;
+		temp = fz / fm;
+		i = i + 1;
+	}
+	printf("%.6f", sum);
+}
+
