@@ -1,0 +1,25 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+int main()
+{
+    int ri, repeat;
+    int i, n;
+    long int a, sn, tn;
+    printf("请输入运算次数（0<r<10）:>");
+    scanf("%d", &repeat);
+    for (ri = 1; ri <= repeat; ri++) 
+    {
+        scanf("%ld%d", &a, &n);
+        tn = 0, sn = 0;
+        for (i = 0; i < n; i++)
+	    {
+		    tn = tn * 10 + a;
+		    sn += tn;
+	    }
+
+        printf("%ld\n", sn);
+    }
+    return 0;
+}
+
