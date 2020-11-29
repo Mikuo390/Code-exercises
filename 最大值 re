@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main()
+{
+    int ri, repeat;
+    int i, max, n, x;
+    printf("请输入运算次数（0<r<10）:>");
+    scanf("%d", &repeat);
+    for (ri = 1; ri <= repeat; ri++) 
+    {
+        printf("请输入数据的数量（0<r<10）:>");
+        scanf("%d", &n);
+        
+        scanf("%d", &x);
+        max = x;
+        for (i = 2; i <= n; i++)
+        {
+            scanf("%d", &x);
+            if (x > max)
+                max = x;
+        }
+
+        printf("%d\n", max);
+    }
+    return 0;
+}
