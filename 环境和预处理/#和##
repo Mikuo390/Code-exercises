@@ -1,0 +1,45 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+void print(int a)
+{
+	printf("the value of a is %d\n", a);
+}
+int main()
+{
+	int a = 10;
+	int b = 20;
+	//printf("the value of a is %d\n", a);
+	print(a);
+	print(b);
+	return 0;
+}
+
+#把一个宏参数边长对应的字符串
+#define PRINT(X) printf("the value of "#X" is %d\n",X)
+int main()
+{
+	printf("hello world\n");
+	printf("hello " "world\n");
+
+	int a = 10;
+	int b = 20;
+	PRINT(a);
+	//printf("the value of ""a"" is %d\n",a);
+	PRINT(b);
+	//printf("the value of ""b"" is %d\n",b);
+}
+
+
+
+#define CAT(X,Y) X##Y
+int main()
+{
+	int class84 = 2019;
+	printf("%d\n", Class84);
+	printf("%d\n", CAT(Class, 84));
+	//printf("%d\n", Class##84)
+}
+
+
+
