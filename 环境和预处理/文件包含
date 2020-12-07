@@ -1,0 +1,9 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#include"ADD.h"//""引用自定义
+int main()
+{
+	int ret = ADD(2, 3);
+	printf("ret=%d\n",ret);
+}
