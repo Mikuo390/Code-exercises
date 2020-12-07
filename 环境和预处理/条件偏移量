@@ -1,0 +1,63 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+
+#define DEBUG
+int main()
+{
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,0 };
+	int i = 0;
+	for (i = 0; i < 10; i++)
+	{
+		arr[i] = 0;
+#ifdef DEBUG
+		printf("%d ", arr[i]);
+#endif // DEBUG
+	}
+}
+
+
+
+int main()
+{
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,0 };
+	int i = 0;
+	for (i = 0; i < 10; i++)
+	{
+		arr[i] = 0;
+#if 1//真1假0
+		printf("%d ", arr[i]);
+#endif // DEBUG
+	}
+}
+
+
+int main()
+{
+#if 1==2
+	printf("haha\n");
+#elif 2==2
+	printf("hehe\n");
+#else
+	printf("嘿嘿\n");
+#endif
+}
+
+
+
+//检查是否被定义
+#define DEBUG
+int main()
+{
+#if defined(DEBUG)//#ifdef DEBUG
+	printf("定义\n");//定义输出
+#endif
+	printf("没定义\n");
+
+#if !defined(BUG)//#ifndef BUG
+	printf("没定义\n");//没定义输出
+#endif
+	printf("定义\n");
+}
+
+//嵌套指令
