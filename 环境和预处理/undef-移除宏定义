@@ -1,0 +1,10 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#define MAX 100
+
+int main()
+{
+	printf("MAX=%d\n", MAX);
+#undef MAX//移除宏定义
+	//printf("MAX=%d\n", MAX);
+}
