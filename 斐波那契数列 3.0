@@ -1,0 +1,38 @@
+#include "stdio.h"
+#include "math.h"
+int main()
+{
+    int ri, repeat;
+    int i, m, n;
+    long f;
+    long fib(int n);
+
+    scanf("%d", &repeat);
+    for (ri = 1; ri <= repeat; ri++) 
+    {
+        scanf("%d%d", &m, &n);
+        for (i=1; i <= 100; i++)
+        {
+            f = fib(i);
+            if(m <= f && f <= n)
+                printf("%ld ", f);
+        }
+        printf("\n");
+    }
+}
+long fib(int n) 
+{
+    int i, x1 = 1, x2 = 1, x;
+
+    if (n == 1 || n == 2) {
+        return 1;
+    }
+    else {
+        for (i = 3; i <= n; i++) {
+            x = x1 + x2;
+            x1 = x2;
+            x2 = x;
+        }
+        return x;
+    }
+}
