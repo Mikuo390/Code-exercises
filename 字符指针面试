@@ -1,0 +1,32 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()
+{
+//	//1.&arr-&数组名-数组名不是首元素地址-数组名是整个数组的地址
+//	//2.sizeof(arr)-sizeof(数组名)-数组名表示整个数组
+//  //除此之外的任何之外的arr（数组名）都代表首元素地址
+	char arr1[] = "abcdef";//两个不同数组的数组名 不同数组的首元素地址
+	char arr2[] = "abcdef";
+
+	const char* p1 = "abcdef";//p1 p2指向的都是a同一块空间的起始地址
+	const char* p2 = "abcdef";
+	
+	if (arr1 == arr2)//比较的是地址
+	{
+		printf("相同\n");
+	}
+	else
+	{
+		printf("不同\n");
+	}
+
+	if(p1 == p2)
+	{
+		printf("相同\n");
+	}
+	else
+	{
+		printf("不同\n");
+	}
+	return 0;
+}
