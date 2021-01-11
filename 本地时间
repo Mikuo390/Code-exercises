@@ -1,0 +1,14 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+
+#include<stdio.h>
+#include<time.h>
+int main()
+{
+    struct tm* day;//定义一个接收本地详细时间的结构体变量，在上面有这个结构的详细说明
+    time_t tm = 0;
+    time(&tm);
+    day = localtime(&tm);//将秒数转换为本地详细时间描述
+    printf("%d年%d月%d日\n", 1900 + day->tm_year, 1 + day->tm_mon, day->tm_mday);//将时间通过访问结构体成员变量的方法逐个输出，注意年份是从1900年开始，要+1900，月份也要加1
+    return 0;
+}
