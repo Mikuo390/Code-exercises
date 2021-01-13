@@ -1,0 +1,59 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#define MAX 10
+
+void groupMark(int n, float mark[])
+{
+	int A = 0, B = 0, C = 0, D = 0, E = 0,F = 0;
+	for (int i = 0; i < n; i++)
+	{
+		if (0 <= mark[i] && mark[i] <= 59.9)
+		{
+			F++;
+			continue;
+		}
+		else if (60.0 <= mark[i] && mark[i] <= 69.9)
+		{
+			E++;
+			continue;
+		}
+		else if (70.0 <= mark[i] && mark[i] <= 79.9)
+		{
+			D++;
+			continue;
+		}
+		else if (80.0 <= mark[i] && mark[i] <= 89.9)
+		{
+			C++;
+			continue;
+		}
+		else if (90.0 <= mark[i] && mark[i] <= 99.9)
+		{
+			B++;
+			continue;
+		}
+		else if (mark[i] == 100.0)
+		{
+			A++;
+			continue;
+		}
+		else
+			printf("无效成绩!!!");
+	}
+	printf("[0-59]的 %d 个，[60-69]的 %d 个，[70-79]的 %d 个，[80-89]的 %d 个，[90-99]的 %d 个，100 的 %d 个。", F, E, D, C, B, A);
+}
+
+int main()
+{
+	float mark[MAX] = { 0 };
+	int n = 0;
+
+	scanf("%d", &n);
+	for (int i = 0; i < n; i++)
+	{
+		scanf("%f", &mark[i]);
+	}
+	groupMark(n, mark);
+
+	return 0;
+}
