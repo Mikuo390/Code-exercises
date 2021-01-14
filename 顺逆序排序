@@ -1,0 +1,70 @@
+#define _CRT_SECURE_NO_WARNINGS
+#define MAX 10
+#include<stdio.h>
+
+//顺序
+void sortNum1(int n, int arr[])
+{
+	for (int i = 0; i < n - 1; i++)
+	{
+		for (int j = 0; j < n - 1 - i; j++)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+}
+//逆序
+void sortNum2(int n, int arr[])
+{
+	for (int i = 0; i < n - 1; i++)
+	{
+		for (int j = 0; j < n - 1 - i; j++)
+		{
+			if (arr[j] < arr[j + 1])
+			{
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+}
+//打印
+void printNum(int n, int arr[])
+{
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+}
+
+int main()
+{
+	int n;
+	char flag;
+	int arr[MAX] = { 0 };
+	printf("请输入n的大小（1<=n<=50）和运算符号: ");
+	scanf("%d%c", &n,&flag);
+	if (1 <= n && n <= 50)
+	{
+		for (int i = 0; i < n; i++)
+		{
+			scanf("%d", &arr[i]);
+		}
+
+		if(flag == '<')
+			sortNum1(n, arr);
+		else if (flag == '>')
+			sortNum2(n, arr);
+
+		printNum(n, arr);
+	}
+	else
+		printf("输入错误！");
+	return 0;
+}
