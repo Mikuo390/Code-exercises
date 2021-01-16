@@ -1,0 +1,33 @@
+#include<string.h>
+#include<stdio.h>
+void sort(int arr[], int len)
+{
+	int j = 0;
+	int i = 0;
+	for (i = 0; i < len - 1; i++)
+	{
+		int min = i;
+		for (int j = i + 1; j < len; j++)
+		{
+			if (arr[j] < arr[min])
+				min = j;
+		}
+		int tmp = arr[min];
+		arr[min] = arr[i];
+		arr[i] = tmp;
+	}
+}
+
+int main()
+{
+	int arr[10] = { 1, 2, 3, 4, 5, 0, 8, 7, 6, 9 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	sort(arr, sz);
+
+	for (int i = 0; i < sz; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+
+	return 0;
+}
