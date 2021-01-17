@@ -1,0 +1,48 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#include<math.h>
+#define MAX 10
+
+int isPrime(int num)
+{
+	int i = 0;
+	int flag = 1;
+	if (num <= 1)
+		flag = -1;
+	for (i = 2; i <= sqrt(num); i++)
+	{
+		if (num % i == 0)
+		{
+			flag = -1;
+			break;
+		}
+	}
+	return flag;
+}
+
+int calPrimeNum(int *n, int arr[])
+{
+	int sum = 0;
+	for (int i = 0; i < *n; i++)
+	{
+		int ret = isPrime(arr[i]);
+		if (ret > 0)
+			sum += arr[i];
+	}
+	return sum;
+}
+
+int main()
+{
+	int n = 0;
+	int arr[MAX] = { 0 };
+
+	printf("请输入n的数值:>");
+	scanf("%d", &n);
+
+	for (int i = 0; i < n; i++)
+		scanf("%d", &arr[i]);
+
+	printf("%d ", calPrimeNum(&n, arr));
+}
