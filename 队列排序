@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#define MAX 10
+#include<stdio.h>
+int main()
+{
+	int arr[MAX] = { 0 };
+	int n, k;
+	
+	//输入函数
+	printf("请输入人数和循环标准数:>");
+	scanf("%d%d", &n, &k);
+	printf("请输入数据:>");
+	for (int i = 0; i < n; i++)
+	{
+		scanf("%d", &arr[i]);
+	}
+
+	//打印函数
+	for (int i = 0; i < n; i+=k)
+	{
+			printf("%d ", arr[i]);
+	}
+}
